@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+
+/*
+ * 用 html:root（优先级 0-1-1）而不是 :root（0-1-0）：
+ * Element Plus 的 base.css 会随各组件的按需样式在页面模块之后再次注入，
+ * 其 :root 声明会覆盖这里同优先级的变量，必须提高一级才能稳定生效。
+ */
+html:root {
+	/* 医疗蓝绿主色：Element Plus 主色及派生色统一覆盖 */
+	--el-color-primary: #0f8a8f;
+	--el-color-primary-light-3: #57a7ab;
+	--el-color-primary-light-5: #87c5c7;
+	--el-color-primary-light-7: #b7dcdd;
+	--el-color-primary-light-8: #cfe8e9;
+	--el-color-primary-light-9: #e7f3f3;
+	--el-color-primary-dark-2: #0c6e72;
+
+	/* 间距栅格：8 / 12 / 16 / 24 */
+	--his-space-xs: 8px;
+	--his-space-sm: 12px;
+	--his-space-md: 16px;
+	--his-space-lg: 24px;
+}
+
+/* 数字列等宽对齐：金额、号别、队列号、时间等 */
+.num-col .cell {
+	font-variant-numeric: tabular-nums;
+}
